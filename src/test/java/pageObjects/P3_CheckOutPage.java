@@ -6,13 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class P3_CheckOutPage {
 
-	public P3_CheckOutPage(AppiumDriver<AndroidElement> driver) {
+	public P3_CheckOutPage(AppiumDriver driver) {
 
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
@@ -25,5 +24,6 @@ public class P3_CheckOutPage {
 
 	@AndroidFindBy(id = "com.androidsample.generalstore:id/totalAmountLbl")
 	public WebElement total;
-
+	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productName']")
+	public List<WebElement> products;
 }

@@ -1,17 +1,17 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class P1_FormPage {
-
-	public P1_FormPage(AppiumDriver<AndroidElement> driver) {
-
+	AppiumDriver driver;
+	public P1_FormPage(AppiumDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		// PageFactory.initElements(driver, this);
 	}
@@ -34,4 +34,7 @@ public class P1_FormPage {
 	@AndroidFindBy(xpath = "//*[@text='Bangladesh']")
 	public WebElement ChooseCountryBangladesh;
 
+	public WebElement ChooseCountry(String Country) {
+	return 	driver.findElement(By.xpath("//*[@text='"+Country+"']"));
+	}
 }

@@ -1,13 +1,15 @@
 package testCases;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.base;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import pageObjects.P3_CheckOutPage;
@@ -20,11 +22,12 @@ public class TC_1 extends base {
 	@Test
 	public void totalAmountValidation() throws IOException, InterruptedException {
 
-		AndroidDriver<AndroidElement> driver = capabilities();
+		AndroidDriver driver = capabilities();
 
 		P1_FormPage fpage = new P1_FormPage(driver);
 		// fpage.getNameField().sendKeys("kakon");
-		fpage.nameField.sendKeys("kakon");
+		fpage.nameField.click();
+		fpage.nameField.sendKeys("Hesham Abd Elhamed");
 
 		driver.hideKeyboard();
 
@@ -34,9 +37,9 @@ public class TC_1 extends base {
 		fpage.dropDownClick.click();
 
 		Utilitties u = new Utilitties(driver);
-		u.scrollToText("Bangladesh");
+		u.scrollToText("Egypt");
 
-		fpage.ChooseCountryBangladesh.click();
+		fpage.ChooseCountry("Egypt").click();
 
 		fpage.letsShop.click();
 
@@ -50,6 +53,12 @@ public class TC_1 extends base {
 		Thread.sleep(4000);
 
 		P3_CheckOutPage cPage = new P3_CheckOutPage(driver);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10),Duration.ofMillis(100));
+		wait.until(ExpectedConditions.visibilityOfAllElements( cPage.productList));
+		Assert.assertTrue( cPage.productList.size()>0);
+		Assert.assertEquals(cPage.products.get(0).getText(),pPage.products.get(0).getText());
+		Assert.assertEquals(cPage.products.get(1).getText(),pPage.products.get(1).getText());
+
 
 		double sum = 0;
 		int count = cPage.productList.size();
