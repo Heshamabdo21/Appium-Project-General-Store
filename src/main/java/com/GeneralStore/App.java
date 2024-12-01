@@ -1,9 +1,10 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package com.GeneralStore;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )

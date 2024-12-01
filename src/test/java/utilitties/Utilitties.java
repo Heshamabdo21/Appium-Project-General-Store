@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package utilitties;
 
 import io.appium.java_client.AppiumBy;

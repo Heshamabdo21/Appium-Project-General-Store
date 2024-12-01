@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package pageObjects;
 
 import org.openqa.selenium.By;

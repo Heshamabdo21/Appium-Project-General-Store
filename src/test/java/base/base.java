@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package base;
 
 import java.io.File;
