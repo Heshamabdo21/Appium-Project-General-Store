@@ -1,5 +1,8 @@
+// BEGIN
+
 /*
- * Copyright (c) 2024.
+ * This class represents the Page Object for the Checkout page in the mobile application.
+ * It contains elements and methods related to the Checkout page.
  */
 
 package pageObjects;
@@ -15,19 +18,27 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class P3_CheckOutPage {
 
-	public P3_CheckOutPage(AppiumDriver driver) {
+    // Constructor to initialize the Page Object with the driver
+    public P3_CheckOutPage(AppiumDriver driver) {
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    }
 
-		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-	}
+    // List of WebElements representing the total amount displayed on the Checkout page
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/totalAmountLbl")
+    public List<WebElement> totalAmount;
 
-	@AndroidFindBy(id = "com.androidsample.generalstore:id/totalAmountLbl")
-	public List<WebElement> totalAmount;
+    // List of WebElements representing the product prices displayed on the Checkout page
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/productPrice")
+    public List<WebElement> productList; // public List<WebElement> name; -->for FindByElements
 
-	@AndroidFindBy(id = "com.androidsample.generalstore:id/productPrice")
-	public List<WebElement> productList; // public List<WebElement> name; -->for FindByElements
+    // WebElement representing the total amount label on the Checkout page
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/totalAmountLbl")
+    public WebElement total;
 
-	@AndroidFindBy(id = "com.androidsample.generalstore:id/totalAmountLbl")
-	public WebElement total;
-	@AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productName']")
+    // WebElement representing the product name displayed on the Checkout page
+    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productName']")
+    public WebElement productName;
+    
+// END
 	public List<WebElement> products;
 }

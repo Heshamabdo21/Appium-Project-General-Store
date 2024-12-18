@@ -1,37 +1,46 @@
+// BEGIN
+/*
+  This XML file is a Maven Project Object Model (POM) file used for configuring a Maven project.
+  It contains information about the project such as groupId, artifactId, version, dependencies, and build settings.
+*/
+
 <!--
   ~ Copyright (c) 2024.
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion> <!-- Specifies the version of the POM model -->
+  
+  <groupId>com.GeneralStore</groupId> <!-- Defines the unique identifier of the project's group -->
+  <artifactId>Appium</artifactId> <!-- Defines the unique identifier of the artifact (project) -->
+  <version>0.0.1-SNAPSHOT</version> <!-- Specifies the version of the project -->
+  <packaging>jar</packaging> <!-- Specifies the packaging type of the project (JAR file in this case) -->
 
-  <groupId>com.GeneralStore</groupId>
-  <artifactId>Appium</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <name>Appium</name> <!-- Specifies the name of the project -->
+  <url>http://maven.apache.org</url> <!-- Specifies the URL of the project's homepage -->
 
-  <name>Appium</name>
-  <url>http://maven.apache.org</url>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version> <!-- Replace with your version -->
-				<configuration>
-					<compilerArgs>
-						<arg>-Xlint:-options</arg>
-					</compilerArgs>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <build> <!-- Configuration for the build process of the project -->
+        <plugins> <!-- Specifies the list of plugins to be used in the build process -->
+            <plugin> <!-- Defines a Maven plugin configuration -->
+                <groupId>org.apache.maven.plugins</groupId> <!-- Specifies the group ID of the plugin -->
+                <artifactId>maven-compiler-plugin</artifactId> <!-- Specifies the artifact ID of the plugin -->
+                <version>3.11.0</version> <!-- Specifies the version of the plugin -->
+                <configuration> <!-- Configuration settings for the plugin -->
+                    <compilerArgs> <!-- Specifies arguments to be passed to the compiler -->
+                        <arg>-Xlint:-options</arg> <!-- Compiler argument to disable specific lint options -->
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+  <properties> <!-- Defines project-wide properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Specifies the character encoding for the source files -->
   </properties>
 
-  <dependencies>
+  <dependencies> <!-- Specifies the project's dependencies -->
+// END
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
